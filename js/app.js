@@ -47,7 +47,6 @@ app.config(['$routeProvider','$locationProvider', function ($routeProvider,$loca
     })
     .otherwise({redirectTo:'/404'});
 
-    $locationProvider.html5Mode(true);
 }]);
 
 app.run(['$rootScope', function($rootScope, $location) {
