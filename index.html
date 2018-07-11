@@ -1,0 +1,95 @@
+<!doctype html>
+<html class="no-js" lang="" ng-app="jam">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title ng-bind="title"></title>
+        <meta name="description" content="{{description}}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.min.css">
+        <link rel="stylesheet" href="css/jam-icons.min.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+        <link rel="manifest" href="manifest.json">
+        <link rel="mask-icon" href="safari-pinned-tab.svg" color="#f9be3f">
+        <meta name="theme-color" content="#f9be3f">
+        <meta name="apple-mobile-web-app-title" content="Jam icons">
+        <meta name="application-name" content="Jam icons">
+        <meta name="theme-color" content="#f9be3f">
+        <base href="/">
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="js/vendor/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+    <body ng-controller="MainCtrl">
+
+        <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+        <header id="main-header">
+          <a ng-href="/#/" title="Jam icons homepage">
+            <img src="img/logo-jam.png" alt="Logo" style="margin: 2rem 0;" class="logo"/>
+          </a>
+          <h1><span counter
+            value="c.count"
+            to="c.to"
+            duration="2500"
+            effect="'easeOutQuint'"
+            ng-bind="c.count | number:0">0</span> handcrafted & pixel perfect icons.</h1>
+          <nav>
+            <ul id="top-menu">
+              <li>
+                <a ng-href="/#/" title="icons" ng-class="(home === true)?'active':''">icons</a>
+              </li>
+              <li>
+                <a onclick="var that=this;ga('send', 'event', 'Jam icons', 'Download', 'Download button');setTimeout(function(){location.href=that.href;},300);return false;" href="https://github.com/michaelampr/jam/archive/1.0.72.zip" class="dl">download</a>
+
+                <a ng-href="/#/log" title="changelog"><span class="is-version">v1.0.72</span></a>
+              </li>
+              <li>
+                <a ng-href="/#/about" ng-class="(about === true)?'active':''" title="about">about</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <div id="wrapper">
+          <div ng-view></div>
+        </div>
+
+        <footer>
+          <small class="copy">&copy;2017 / All rights reserved.<span class="ftM"><a href="/#/about">about</a> •<a href="/#/log">changelog</a> •<a href="mailto:hexlxlxox@xmicxhxaxelxamxpxrxixmxo.cxoxmx" onmouseover="this.href=this.href.replace(/x/g,'');">contact</a> •<a href="https://github.com/michaelampr/jam" target="_blank">Github project</a></span></small>
+          <small class="handmade">Handmade with <span class="love jam jam-heart-f"></span> by <a href="https://twitter.com/michaelampr" title="Twitter profile" target="_blank">Michael A.</a></small>
+          <small class="licence">Licensed under <a href="https://opensource.org/licenses/mit-license.html" target="_blank">MIT</a>. <a href="/#/licence">Details</a>.</small>
+        </footer>
+        <div class="mtouch"></div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.js"></script>
+        <script src="https://cdn.rawgit.com/zenorocha/clipboard.js/master/dist/clipboard.min.js"></script>
+        <script src="js/vendor/ngclipboard.min.js"></script>
+
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.1.0.min.js"><\/script>')</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+        <script src="js/angular-counter.min.js"></script>
+        <script src="js/app.js"></script>
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-91311363-2', 'auto');
+          ga('send', 'pageview');
+
+        </script>
+        <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+    </body>
+</html>

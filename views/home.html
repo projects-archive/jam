@@ -1,0 +1,70 @@
+<section id="HomePage" class="fadeIn">
+  <div class="search-master">
+    <input type="text" ng-model="search" ng-change="live()" placeholder="Search icons" class="search-ico">
+  </div>
+  <div class="icons">
+    <h2 class="ico-title" ng-hide="!fw.length">Web icons</h2>
+    <ul   class="icons-list">
+      <li copy-el class="icon" ng-repeat="w in fw = ( icons.w  | filter:filterItem )">
+        <div class="iconHolder" ngclipboard-success="onSuccess(e);" ngclipboard data-clipboard-text="jam-{{w.name}}" >
+          <div class="cy">Copied!</div>
+          <span style="font-size: 34px;" class="jam jam-{{w.name}}"></span>
+          <span>{{w.name}}</span>
+        </div>
+      </li>
+    </ul>
+
+    <h2 class="ico-title" ng-hide="!fd.length">Directional icons</h2>
+    <ul class="icons-list">
+      <li copy-el ng-repeat="d in fd = ( icons.d  | filter:filterItem )">
+        <div class="iconHolder" ngclipboard-success="onSuccess(e);" ngclipboard data-clipboard-text="jam-{{d.name}}" >
+          <div class="cy">Copied!</div>
+          <span style="font-size: 34px;" class="jam jam-{{d.name}}"></span>
+          <span>{{d.name}}</span>
+        </div>
+      </li>
+    </ul>
+
+    <h2 class="ico-title" ng-hide="!fp.length">Player icons</h2>
+    <ul class="icons-list">
+      <li copy-el ng-repeat="p in fp = ( icons.p  | filter:filterItem )">
+        <div class="iconHolder" ngclipboard-success="onSuccess(e);" ngclipboard data-clipboard-text="jam-{{p.name}}" >
+          <div class="cy">Copied!</div>
+          <span style="font-size: 34px;" class="jam jam-{{p.name}}"></span>
+          <span>{{p.name}}</span>
+        </div>
+      </li>
+    </ul>
+
+    <h2 class="ico-title" ng-hide="!ft.length">Text icons</h2>
+    <ul copy-el class="icons-list">
+      <li ng-repeat="t in ft = ( icons.t  | filter:filterItem )">
+        <div class="iconHolder" ngclipboard-success="onSuccess(e);" ngclipboard data-clipboard-text="jam-{{t.name}}" >
+          <div class="cy">Copied!</div>
+          <span style="font-size: 34px;" class="jam jam-{{t.name}}"></span>
+          <span>{{t.name}}</span>
+        </div>
+      </li>
+    </ul>
+
+    <h2 class="ico-title" ng-hide="!fs.length">Social icons</h2>
+    <ul copy-el class="icons-list">
+      <li ng-repeat="s in fs = ( icons.s | filter:filterItem )">
+        <div class="iconHolder" ngclipboard-success="onSuccess(e);" ngclipboard data-clipboard-text="jam-{{s.name}}" >
+          <div class="cy">Copied!</div>
+          <span style="font-size: 34px;" class="jam jam-{{s.name}}"></span>
+          <span>{{s.name}}</span>
+        </div>
+      </li>
+    </ul>
+
+
+    <div ng-show="!ft.length && !fw.length && !fs.length && !fp.length" class="empty-icons">
+      <img src="/img/notfound.svg" alt="Ghost icon"/>
+      <span class="wh">Whoops!</span>
+      <span class="uWh">No icon found for this search. Try other word.</span>
+    </div>
+
+  </div>
+
+</section>
